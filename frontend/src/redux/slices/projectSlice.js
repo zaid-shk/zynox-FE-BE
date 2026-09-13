@@ -26,6 +26,15 @@ const projectSlice = createSlice({
         state.project[index] = action.payload;
       }
     },
+    toggleFavorite: (state, action) => {
+      const project = state.project.find(
+        (project) => project._id === action.payload,
+      );
+
+      if (project) {
+        project.is_favorite = !project.is_favorite;
+      }
+    },
     setCompleteProjects: (state, action) => {
       state.completeProjects = action.payload;
     },
@@ -34,6 +43,7 @@ const projectSlice = createSlice({
         (project) => project._id !== action.payload,
       );
     },
+
     setLoading: (state, action) => {
       state.loading = action.payload;
     },
@@ -52,6 +62,7 @@ export const {
   setLoading,
   setError,
   setCompleteProjects,
+  toggleFavorite,
 } = projectSlice.actions;
 
 export default projectSlice.reducer;

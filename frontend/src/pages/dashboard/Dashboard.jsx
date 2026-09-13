@@ -4,9 +4,14 @@ import Dashboard from "./components/Dashboard";
 
 const DashboardMain = () => {
   return (
-    <section className="h-screen w-screen grid grid-cols-[20vw_80vw]">
+    <section className="flex h-screen w-full overflow-hidden bg-[#101216]">
+      {/* Sidebar */}
       <Sidebar />
-      <Dashboard />
+
+      {/* Main Content */}
+      <main className="min-w-0 flex-1 overflow-y-auto pb-16 md:pb-0">
+        <Dashboard />
+      </main>
     </section>
   );
 };

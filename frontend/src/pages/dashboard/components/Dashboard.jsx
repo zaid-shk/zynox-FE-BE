@@ -6,7 +6,7 @@ const Dashboard = () => {
   return (
     <div>
       <Navbar />
-      <main className="">
+      <main className="h-screen overflow-y-auto pb-10">
         <Outlet />
       </main>
     </div>
